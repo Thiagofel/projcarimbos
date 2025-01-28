@@ -1,0 +1,1 @@
+web: gunicorn carimbos.wsgi --log-file -
