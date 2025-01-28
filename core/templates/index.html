@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"type="text/css" href="{% static 'css/style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="flexbox login-container">
+        <h1>Bem Vindo</h1>
+
+        {% if erro %}
+            <div class="mensagem-erro">
+                <p> {{ erro }}</p>
+            </div> 
+        {% endif %}
+
+        <form action="{% url 'carimbo' %}" method="POST">
+            {% csrf_token %}
+            <div>
+
+                {{ form }}
+                
+                <input type="submit" value="Consultar Carimbos"> 
+            </div>
+                {% if nome_sugerido %}
+                <div class="sugestao-box">
+                    <!-- <p>Sugestões de nomes encontrados:</p> -->
+                    <select id="sugestoes" onchange="preencherNome()" size="5">
+                        <option value="">Selecione uma sugestão:</option>
+                        {% for sugestao in nome_sugerido %}
+                            <option value="{{ sugestao }}">{{ sugestao }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% endif %}        
+        </form>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

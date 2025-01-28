@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Controle de Carimbos</title>
+</head>
+<body>
+    <div class="carimbo-container">
+        <div class="imagem-carimbo-container">
+            <img src="{% static imagem_carimbo %}" alt="Imagem do carimbo" class="imagem-carimbo">
+            <div class="informacoes-container">   
+                <p>Login: {{ login }}</p>
+                <p>Senha: {{ senha_login }}</p>  
+                <h2>Olá, {{ nome }}  </h2>
+                <!-- <p>Você possui {{ carimbo }} carimbos.</p> -->
+                
+                <!-- {% if notificacao %}
+                <p class="notificacao">{{ notificacao }}</p>
+                {% endif %} -->
+            </div>
+        </div>
+        <a href="{% url 'index' %}">
+            <button class="submit">Voltar</button>
+        </a>
+    </div>
+</body>
+<footer>
+    <!-- Entre em contato conosco através do whatsapp: -->
+</footer>
+</html>
