@@ -65,7 +65,7 @@ body::before {
 .informacoes-container {
     position: absolute; /* Posiciona o texto sobre a imagem */
     top: 17%; /* Ajusta a posição vertical */
-    left:55%; /* Ajusta a posição horizontal */
+    left:49%; /* Ajusta a posição horizontal */
     transform: translate(-10%, -20%); /* Centraliza melhor */
     color: #020101; /* Muda a cor do texto para contraste */
     font-weight: bold;
