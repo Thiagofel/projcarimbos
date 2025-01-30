@@ -29,7 +29,7 @@
                 <div class="sugestao-box">
                     <!-- <p>Sugestões de nomes encontrados:</p> -->
                     <select id="sugestoes" onchange="preencherNome()" size="5">
-                        <option value="">Selecione uma sugestão:</option>
+                        <option value="" disabled selected>Selecione uma sugestão:</option>
                         {% for sugestao in nome_sugerido %}
                             <option value="{{ sugestao }}">{{ sugestao }}</option>
                         {% endfor %}
